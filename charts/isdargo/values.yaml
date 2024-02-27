@@ -1362,7 +1362,7 @@ carinainstance:
 vela:
   image:
     repository: vela-api
-    tag: v1.4.3
+    tag: v1.4.5
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1409,7 +1409,7 @@ ui:
   ## Image specific details
   image:
     repository: ubi8-oes-ui
-    tag: v4.1.4
+    tag: v4.1.5.1
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1478,7 +1478,7 @@ auditClient:
   ##
   image:
     repository: ubi8-oes-audit-client
-    tag: v4.1.4
+    tag: v4.1.5
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1550,7 +1550,7 @@ gate:
   ## Image specific details
   image:
     repository: ubi8-gate
-    tag: v4.1.4
+    tag: v4.1.5
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1626,7 +1626,7 @@ platform:
   ## Image specific details
   image:
     repository: ubi8-oes-platform
-    tag: v4.1.4
+    tag: v4.1.5.1
     pullPolicy: IfNotPresent
 
   annotations:
@@ -1666,7 +1666,7 @@ sapor:
   ## Image specific details
   image:
     repository: ubi8-oes-sapor
-    tag: v4.1.4
+    tag: v4.1.5
     pullPolicy: IfNotPresent
 
   annotations:
@@ -1811,13 +1811,13 @@ forwarder:
   externalName:
   enabled: true
   agent:
-    image: quay.io/opsmxpublic/agent-client:v4.2.4
+    image: quay.io/opsmxpublic/agent-client:v4.2.5
     serviceType: LoadBalancer
     # Value is also used in sapor configuration for kubernetes.agent.serverHostName
     host: opsmx-controller-controller1
   image:
     repository: quay.io/opsmxpublic/agent-controller
-    tag: v4.2.4
+    tag: v4.2.5
     pullPolicy: IfNotPresent
   serverNames:
     - agent-grpc
