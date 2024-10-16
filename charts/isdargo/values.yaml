@@ -1337,7 +1337,7 @@ carinamanager:
   ##
   image:
     repository: carina-manager
-    tag: v1.15.2
+    tag: v1.15.5
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1366,7 +1366,7 @@ carinainstance:
 vela:
   image:
     repository: vela-api
-    tag: v1.4.7
+    tag: isd-argo-2024.08.00-202409030840
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1413,7 +1413,7 @@ ui:
   ## Image specific details
   image:
     repository: ubi8-oes-ui
-    tag: v4.1.9
+    tag: isd-argo-2024.08.00-202409060628
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1429,7 +1429,7 @@ autopilot:
   ## Image specific details
   image:
     repository: ubi8-oes-autopilot
-    tag: v4.1.9-202406241020
+    tag: isd-argo-2024.08.00-202409030840
     pullPolicy: IfNotPresent
 
   annotations:
@@ -1451,7 +1451,29 @@ autopilot:
     ##
     buildAnalysis:
       enabled: false
+################################################################################
+## Values of OEA notificationservice
+##
+notificationservice:
+  ## Image specific details
+  ##
+  image:
+    repository: ubi8-oes-notification-service
+    tag: isd-argo-2024.08.00-202409031319
+    pullPolicy: IfNotPresent
+  host: smtp.gmail.com
+  port: 587
+  username: REPLACE.YOUR.MAIL.ID
+  password: REPLACE.YOUR.MAIL.PASSWORD
 
+  serviceAnnotations: {}
+
+  annotations:
+    prometheus_io_path: /mgmt/prometheus
+    prometheus_io_port: "8099"
+    prometheus.io/scrape: "false"
+  resources: {}
+  config: {}
 ###############################################################################
 ##
 ## Values of OEA auditservice
@@ -1461,7 +1483,7 @@ audit:
   ##
   image:
     repository: ubi8-oes-audit-service
-    tag: v4.1.9-202406241039
+    tag: isd-argo-2024.08.00-202409040940
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1482,7 +1504,7 @@ auditClient:
   ##
   image:
     repository: ubi8-oes-audit-client
-    tag: v4.1.9-202406241020
+    tag: isd-argo-2024.08.00-202409031242
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1503,7 +1525,7 @@ datascience:
   ##
   image:
     repository: ubi8-oes-datascience
-    tag: v4.1.9-202406250729
+    tag: isd-argo-2024.08.00-202409040513
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1521,7 +1543,7 @@ dashboard:
   ## Image specific details
   image:
     repository: ubi8-oes-dashboard
-    tag: v4.1.9-202406241021
+    tag: isd-argo-2024.08.00-202409040942
     pullPolicy: IfNotPresent
 
   annotations:
@@ -1554,7 +1576,7 @@ gate:
   ## Image specific details
   image:
     repository: ubi8-gate
-    tag: v4.1.9
+    tag: isd-argo-2024.08.00-202409031319
     pullPolicy: IfNotPresent
 
   serviceAnnotations: {}
@@ -1643,7 +1665,7 @@ platform:
   ## Image specific details
   image:
     repository: ubi8-oes-platform
-    tag: v4.1.9-202406241023
+    tag: isd-argo-2024.08.00-202409061155
     pullPolicy: IfNotPresent
 
   annotations:
@@ -1683,7 +1705,7 @@ sapor:
   ## Image specific details
   image:
     repository: ubi8-oes-sapor
-    tag: v4.1.9-202406241023
+    tag: isd-argo-2024.08.00-202409061415
     pullPolicy: IfNotPresent
 
   annotations:
@@ -1743,7 +1765,7 @@ visibility:
   ## Image specific details
   image:
     repository: ubi8-oes-visibility
-    tag: v4.1.9-202406241023
+    tag: isd-argo-2024.08.00-202409030837
     pullPolicy: IfNotPresent
 
   annotations:

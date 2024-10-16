@@ -1,0 +1,36 @@
+server:
+  port: 8099
+
+redis:
+    connection: {{ template "oes.redisBaseURL" . }}
+{{- if not .Values.installRedis }}
+  configuration:
+    secure: true
+{{- end }}
+
+smtp:
+  host: {{ .Values.notificationservice.host }}
+  port: {{ .Values.notificationservice.port }}
+  username: {{ .Values.notificationservice.username }}
+  password: {{ .Values.notificationservice.password }}
+
+management:
+  health:
+    elasticsearch:
+      enabled: false
+    ldap:
+      enabled: false
+  endpoints:
+    web:
+      base-path: /mgmt
+      exposure:
+        include: health,info,metrics,prometheus
+      
+message-broker:
+  enabled: true
+  username: 'rabbitmq'
+  password: 'Networks123'
+  host: rabbitmq-service
+  port: 5672
+  endpoint:
+    name: rabbitmq

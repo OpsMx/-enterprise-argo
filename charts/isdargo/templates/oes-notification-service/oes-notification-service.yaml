@@ -1,0 +1,27 @@
+{{- if (eq .Values.installationMode "OEA-AP") -}}
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: oes
+    component: notificationservice
+{{ include "oes.standard-labels" . | indent 4 }}
+{{- if .Values.auditClient.serviceAnnotations }}
+  annotations:
+{{ toYaml .Values.notificationservice.serviceAnnotations | indent 4 }}
+{{- end }}
+  name: oes-notification-service
+spec:
+  ports:
+  - name: notificationservice
+    port: 8099
+    protocol: TCP
+    targetPort: 8099
+    {{- if eq .Values.k8sServiceType "NodePort" }}
+    nodePort: 8099
+    {{- end }}
+  selector:
+    app: oes
+    component: notificationservice
+  type: {{ .Values.k8sServiceType }}
+{{- end -}}

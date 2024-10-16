@@ -126,3 +126,11 @@ argo-rollouts:
   installCRDs: true
   # Set to true if crds need to be deleted as part of helm uninstall
   keepCRDs: false
+################################################################################
+## Values of OEA notificationservice
+##
+notificationservice:
+  host: smtp.gmail.com
+  port: 587
+  username: REPLACE.YOUR.MAIL.ID
+  password: REPLACE.YOUR.MAIL.PASSWORD

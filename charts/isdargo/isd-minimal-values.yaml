@@ -60,3 +60,11 @@ installdemoapps: false
 autoconfigureagent: false
 #######################################################################################
 installkeycloak: false
+################################################################################
+## Values of OEA notificationservice
+##
+notificationservice:
+  host: smtp.gmail.com
+  port: 587
+  username: REPLACE.YOUR.MAIL.ID
+  password: REPLACE.YOUR.MAIL.PASSWORD

@@ -27,3 +27,11 @@ databases:
   platform:
     type: postgresql
     connectString: host=oes-db user='{{ .Values.db.username }}' password='{{ .Values.db.password }}' database=platformdb
+message-broker:
+  enabled: true
+  username: 'rabbitmq'
+  password: 'Networks123'
+  host: rabbitmq-service
+  port: 5672
+  endpoint:
+    name: rabbitmq

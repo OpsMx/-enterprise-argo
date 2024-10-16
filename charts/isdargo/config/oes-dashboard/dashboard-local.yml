@@ -20,3 +20,11 @@ spinnakerLink: {{ .Values.dashboard.config.spinnakerLink }}
 {{- else }}
 spinnakerLink: /deck/
 {{- end }}
+message-broker:
+  enabled: true
+  username: rabbitmq
+  password: Networks123
+  host: rabbitmq-service
+  port: 5672
+  endpoint:
+    name: rabbitmq
